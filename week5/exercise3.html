@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <!-- css -->
+    <style>
+      body {
+        text-align: center;
+        padding: 50px;
+        background-color: gray;
+      }
+      .done {
+        color: rgba(26, 23, 23, 0.404);
+        text-decoration: line-through;
+      }
+      input {
+        background-color: rgba(255, 255, 255, 0.158);
+        height: 4vh;
+        width: 40vh;
+      }
+      button {
+        width: 5%;
+        height: 100%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.623);
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.158);
+        margin: 10px;
+        font-size: 3vh;
+      }
+    </style>
+    <!-- css -->
+  </head>
+  <body>
+    <input type="inputField" type="text" id="inputField" />
+    <button id="add">add</button>
+    <ul id="listContainer"></ul>
+  </body>
+
+  <!-- js -->
+  <script>
+    let addButton = document.getElementById("add");
+    let listContainer = document.getElementById("listContainer");
+    let inputField = document.getElementById("inputField");
+
+    addButton.addEventListener("click", () => {
+      var list = document.createElement("li");
+      list.innerHTML = `<button onclick="mark(this)">Done</button>
+      ${inputField.value}
+                <button onclick="deleteLi(this)">X</button>`;
+      listContainer.appendChild(list);
+      inputField.value = "";
+    });
+    function mark(a) {
+      a.parentElement.classList.toggle("done");
+    }
+    function deleteLi(a) {
+      a.parentElement.remove();
+    }
+  </script>
+  <!-- js -->
+</html>
