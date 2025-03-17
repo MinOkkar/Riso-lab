@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portlifio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Edward's Projects</h1>
+    </header>
+    <main>
+      <h2>Projects</h2>
+      <% Projects.forEach(post => { %>
+      <article>
+        <h3><%= post.title %></h3>
+        <p><%= post.content %></p>
+        <div><a href="<%= post.link %>" target="_blank">View</a></div>
+        <p class="meta_date">Posted on: <%= post.date %></p>
+      </article>
+
+      <% }) %>
+    </main>
+    <footer>
+      <p>@6604133</p>
+    </footer>
+  </body>
+</html>
