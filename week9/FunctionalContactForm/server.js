@@ -21,5 +21,6 @@ app.get("/submissions", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("http://localhost:3000/contact");
+  console.log("form -> http://localhost:3000/contact");
+  console.log("submissions-> http://localhost:3000/submissions");
 });

@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   text-align: center;
   color: white;
+  align-items: center;
 }
 
 form {
@@ -11,6 +12,7 @@ form {
   flex-direction: column;
   padding: 10px;
   border: 1px rgb(255, 255, 255) solid;
+  width: 50vh;
 }
 
 form > * {
